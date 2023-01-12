@@ -33,7 +33,6 @@ console.log(getUrlParams('staticOne/one/staticThree/three', pattern))
 console.log(getUrlParams('staticOne/one/staticTwo/staticThree/two', pattern))
 
 
-//change Object types if needed
 function objectDiff<T>(source: T, target: T): Object {
     let ret:any = {}
     for (let key in target) {
