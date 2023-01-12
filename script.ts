@@ -4,8 +4,7 @@ function getUrlParams(path: string, pattern: string): Object {
     const _path: string[] = path.split('/');
     const _pattern: string[] = pattern.split('/');
     let obj:any = {};
-    for (let i = 0; i < _pattern.length; i++){
-        if (i === _path.length+1) break;
+    for (let i:number = 0; i < Math.min(_pattern.length, _path.length); i++){
         if (_pattern[i].startsWith(':')) {
             //if param is only ':' it breaks and return the previous params
             //we could use obj[_path[i]] = null in that case too.
