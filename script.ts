@@ -36,9 +36,10 @@ console.log(getUrlParams('staticOne/one/staticTwo/staticThree/two', pattern))
 function objectDiff<T>(source: T, target: T): Object {
     let ret:any = {}
     for (let key in target) {
+        if(source[key] !== target[key])
         ret[key] = {'old': source[key], 'new': target[key]}
     }
     return ret
 }
 
-console.log(objectDiff({id: "1", age:18}, {id:"2", name:"Ahmed", lastname: "Zrouqui", age: 25}))
+console.log(objectDiff({id: "1", age:18}, {id:"2", name:"Ahmed", lastname: "Zrouqui", age: 18}))
