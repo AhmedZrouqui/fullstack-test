@@ -9,7 +9,7 @@ function getUrlParams(path: string, pattern: string): Object {
             //if param is only ':' it breaks and return the previous params
             //we could use obj[_path[i]] = null in that case too.
             if (_pattern[i].length < 2) break;
-            obj[_path[i]] = _pattern[i].slice(1,_pattern[i].length);
+            obj[_pattern[i]] = _path[i].slice(1,_path[i].length);
         } else {
             if (_pattern[i] !== _path[i]) {
                 break;
