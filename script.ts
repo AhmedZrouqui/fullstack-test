@@ -34,15 +34,7 @@ console.log(getUrlParams('staticOne/one/staticTwo/staticThree/two', pattern))
 
 
 //change Object types if needed
-interface IProps{
-    [key: string]: any;
-    id: string;
-    name?: string;
-    lastname?: string;
-    age: number;
-}
-
-function objectDiff(source: IProps, target: IProps): Object {
+function objectDiff<T>(source: T, target: T): Object {
     let ret:any = {}
     for (let key in target) {
         ret[key] = {'old': source[key], 'new': target[key]}
